@@ -1,26 +1,28 @@
 import type React from "react"
+import type { Metadata } from "next/types"
+import { Outfit } from "next/font/google"
 import "./globals.css"
-import { Inter } from "next/font/google"
+import { ThemeProvider } from "./components/theme-provider"
 
-const inter = Inter({ subsets: ["latin"] })
+const outfit = Outfit({ subsets: ["latin"] })
 
-export const metadata = {
-  title: "SaudAli - Portfolio",
-  description: "Professional portfolio showcasing my work and skills",
+export const metadata: Metadata = {
+  title: "Saud Muhammad Ali | Portfolio",
+  description: "Full-Stack Developer, AI Enthusiast, Athlete",
 }
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-black text-white`}>
-      
-        <main className="page-transition">{children}</main>
+    <html lang="en" suppressHydrationWarning>
+      <body className={outfit.className}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
 }
-

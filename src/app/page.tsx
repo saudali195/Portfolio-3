@@ -1,21 +1,25 @@
-import Hero from "./components/hero";
-import TechStack from "./components/techtack";
-import ProjectShowcase from "./components/projectShowcase";
-import Testimonials from "./components/testimontals";
-import ContactForm from "./components/contactForm";
-import Navbar from "./components/navbar";
-import Footer from "./components/footer";
+import Hero from "./components/hero"
+import Navbar from "./components/navbar"
+import About from "./components/about"
+import Projects from "./projects/page"
+import Skills from "./components/skills"
+import Testimonials from "./components/testimontals"
+import Contact from "./components/contact"
+import Footer from "./components/footer"
+import ScrollToTop from "./components/scroll-to-top"
 
 export default function Home() {
   return (
-    <main className="bg-black text-white min-h-screen">
+    <main className="min-h-screen bg-background">
       <Navbar />
       <Hero />
-      <TechStack />
-      <ProjectShowcase />
+      <About />
+      <Projects />
+      <Skills />
       <Testimonials />
-      <ContactForm />
+      <Contact />
       <Footer />
+      <ScrollToTop />
     </main>
-  );
+  )
 }
